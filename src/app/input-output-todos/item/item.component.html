@@ -1,0 +1,13 @@
+<ul>
+    <li *ngFor="let item of todos; let i = index"  [ngClass]="{'completed': item.completed}">
+        <span>
+            <mat-checkbox class="example-margin" [checked]="item.completed" (click)="complete(item,i)"></mat-checkbox>
+        </span>
+        <span class="select" style="font-size: 24px;" (dblclick)="editItem(i)" *ngIf="selectedItemIndex !== i">{{ item.text }}</span>
+        <input  *ngIf="selectedItemIndex === i" type="text" [(ngModel)]="todos[i].text" (keyup.enter)="saveItem()" (blur)="saveItem()">
+        <span class="distroy" style="margin-left: 20px; font-size: 20px;" (click)="deleteItem(i)">
+            <mat-icon matSuffix>close</mat-icon>
+        </span>
+    </li>
+</ul>
+

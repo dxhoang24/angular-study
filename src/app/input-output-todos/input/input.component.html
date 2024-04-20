@@ -1,0 +1,18 @@
+<p style="margin-top: 20px; margin-left: 50px;">
+    <mat-form-field appearance="outline">
+      <mat-label>Công việc</mat-label>
+      <input matInput placeholder="Nhập ở đây" [(ngModel)]="data">
+    </mat-form-field>
+    <button (click)="addData()" mat-fab extended style="margin-left: 10px;">
+        Thêm mới
+    </button>
+    <button mat-fab extended style="margin-left: 10px;" (click)="findData('1')">
+        All
+    </button>
+    <button mat-fab extended style="margin-left: 10px;" (click)="findData('2')">
+        Hoàn thành
+    </button>
+    <button mat-fab extended style="margin-left: 10px;" (click)="findData('3')">
+        Chưa hoàn thành
+    </button>
+</p>
